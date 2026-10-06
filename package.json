@@ -1,0 +1,30 @@
+{
+  "name": "ehr-blockchain-portal",
+  "version": "1.0.0",
+  "description": "Decentralized EHR Portal using Sepolia testnet and MongoDB",
+  "main": "backend/server.js",
+  "scripts": {
+    "backend": "node backend/server.js",
+    "frontend": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deploy:local": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "node": "npx hardhat node"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.24.4",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "concurrently": "^8.2.2",
+    "hardhat": "^2.22.3"
+  }
+}
